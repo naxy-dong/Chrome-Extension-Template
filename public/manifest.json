@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension tutorial",
+  "version": "1.0.0",
+  "description": "Cool extension",
+  "icons": {
+    "16": "./icon16.png",
+    "32": "./icon32.png",
+    "48": "./icon32.png",
+    "128": "./icon32.png"
+  },
+
+  "action": {
+    "default_popup": "./index.html",
+    "default_icon": {
+      "16": "./icon16.png",
+      "24": "./icon32.png",
+      "32": "./icon32.png"
+    },
+    "default_title": "Click Me"
+  }
+}
