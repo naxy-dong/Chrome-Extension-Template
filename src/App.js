@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextComponent from './Components/TOBECHANGED';
 
 function App() {
   const [input, setInput] = useState('');
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="w-64 h-32 p-4 space-y-4">
+      <TextComponent />
       <textarea
         className="w-full p-2 border rounded-md"
         placeholder="Input"
