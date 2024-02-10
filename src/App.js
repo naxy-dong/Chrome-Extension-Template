@@ -36,22 +36,24 @@ function App() {
   });
 
 
-  useEffect(() => {
-    function getWindowSize() {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const tab = tabs[0];
-        if (tab && tab.id !== undefined) {
-          chrome.tabs.sendMessage(tab.id, { action: "getWindowSize" }, (response) => {
-            if (response) {
-              console.log('Window size:', response);
-              setWindowSize({ width: response.width, height: response.height });
-            }
-          });
-        }
-      });
-    }
-    getWindowSize();
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  // useEffect(() => {
+  //   function getWindowSize() {
+  //     console.log(chrome.tabs, chrome.tabs.query, chrome.tabs.sendMessage)
+  //     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  //       const tab = tabs[0];
+  //       console.log(tabs[0].id)
+  //       if (tab && tab.id !== undefined) {
+  //         chrome.tabs.sendMessage(tab.id, { action: "getWindowSize" }, (response) => {
+  //           if (response) {
+  //             console.log('Window size:', response);
+  //             setWindowSize({ width: response.width, height: response.height });
+  //           }
+  //         });
+  //       }
+  //     });
+  //   }
+  //   getWindowSize();
+  // }, []); // Empty dependency array means this effect runs once after the initial render
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
